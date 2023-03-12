@@ -8,7 +8,7 @@ async function getStats(db){
   return statList;
 }
 
-console.log(getStats(db));
+// console.log(getStats(db));
 
 
 async function addStat(db, name, score){
@@ -26,6 +26,8 @@ async function addStat(db, name, score){
 
 //example call of addStat function. Pass in db as 1st argument, (string) name as 2nd, and (number) score as 3rd 
 // addStat(db, "Alan", 1999);
+
+export { getStats, db, addStat};
 
 
 

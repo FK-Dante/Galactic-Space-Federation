@@ -1,3 +1,7 @@
+import { getStats, db } from "./CRUD.js";
+
+// console.log(getStats(db));
+
 var shipx;              //ship position X
 var shipy;              //ship position Y
 var x;                  //Stars alignment X
@@ -96,7 +100,7 @@ function preload() {
   soundFormats('ogg', 'mp3');
   song = loadSound("GameMusic.mp3");
   pewpewSound = loadSound("LaserBlaster.mp3");
-  pewpewSound.setVolume(0.3)
+//   pewpewSound.setVolume(0.3)
 
   threat0 = loadImage('Threat0.png');
   threat1 = loadImage('Threat1.png');
@@ -251,7 +255,7 @@ function setup() {
             //Video Setup
             lost = createVideo(['LoseVid.mp4']);
             lost.hide()
-            song.setVolume(1)
+            // song.setVolume(1)
             lost.volume(1)
             
             
@@ -435,7 +439,7 @@ function setup() {
                 rect(25, 25, 40, 40)
             }
             else {
-                song.pause()
+                // song.pause()
 
                 stroke(0)
                 strokeWeight(1)
@@ -464,7 +468,7 @@ function setup() {
                 }
                 text("Your score was: " + score, 250, 550)
 
-
+                // console.log(getStats(db));
             }
             stroke(0)
             strokeWeight(1)
@@ -686,8 +690,8 @@ function setup() {
                 fill(0,255,0);
                 text("VLRT", 615, 60);
                 
-                threat0.resize(100,100);
-                image(threat0, 680, 15);
+                // threat0.resize(100,100);
+                // image(threat0, 680, 15);
                 
                 strokeWeight(2);
 
@@ -911,3 +915,9 @@ function setup() {
         [ ]     Quick-Shot      (Player laser speed will be increased)
         [ ]     ChronoSphere    (Slows down time, decreases enemy movement speed, decreases enemy laser movement speed, decreases background stars movement speed)
         */
+
+
+
+
+window.setup = setup;
+window.draw = draw;
